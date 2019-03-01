@@ -46,8 +46,7 @@ const ProfileSchema = new Schema({
 				required: true
 			},
 			location: {
-				type: String,
-				required: false
+				type: String
 			},
 			from: {
 				type: Date,
@@ -58,7 +57,7 @@ const ProfileSchema = new Schema({
 			},
 			current: {
 				type: Boolean,
-				required: true
+				default: false
 			},
 			description: {
 				type: String
@@ -88,7 +87,7 @@ const ProfileSchema = new Schema({
 			},
 			current: {
 				type: Boolean,
-				required: true
+				default: false
 			},
 			description: {
 				type: String
@@ -102,15 +101,14 @@ const ProfileSchema = new Schema({
 		twitter: {
 			type: String
 		},
-		type: String
+		facebook: {
+			type: String
+		},
+		instagram: {
+			type: String
+		},
+		linkedin: {}
 	},
-	facebook: {
-		type: String
-	},
-	instagram: {
-		type: String
-	},
-	linkedin: {},
 	date: {
 		type: Date,
 		default: Date.now
