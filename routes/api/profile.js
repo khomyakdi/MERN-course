@@ -93,7 +93,7 @@ router.post(
 				//Create
 
 				//Check if handle exists
-				Profile.findOne({ nadle: profileFields.handle }).then(profile => {
+				Profile.findOne({ handle: profileFields.handle }).then(profile => {
 					if (profile) {
 						errors.handle = 'Thet handle already exists';
 						res.status(400).json(errors);
