@@ -4,7 +4,7 @@ import setAuthToken from './utils/setAuthToken';
 import { setCurrentUser, logoutUser } from './actions/authActions';
 import { clearCurrentProfile } from './actions/profileActions';
 
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './store';
 
@@ -49,7 +49,9 @@ class App extends Component {
 						<div className='container'>
 							<Route exact path='/register' component={Register} />
 							<Route exact path='/login' component={Login} />
-							<PrivateRoute exact path='/dashboard' component={Dashboard} />
+							<Switch>
+								<PrivateRoute exact path='/dashboard' component={Dashboard} />
+							</Switch>
 						</div>
 						<Footer />
 					</div>
