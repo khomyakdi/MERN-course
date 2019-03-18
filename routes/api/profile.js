@@ -213,10 +213,8 @@ router.post(
 				description: req.body.description
 			};
 			// Add to exp array
-			console.log(profile);
 			profile.education.unshift(newEdu);
 			profile.save().then(profile => {
-				console.log(profile);
 				res.json(profile);
 			});
 		});

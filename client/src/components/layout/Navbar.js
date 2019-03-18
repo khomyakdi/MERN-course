@@ -21,7 +21,11 @@ class Navbar extends Component {
 					</Link>
 				</li>
 				<li className='nav-item'>
-					<a href onClick={this.onLogoutClick.bind(this)} className='nav-link'>
+					<a
+						href='/'
+						onClick={this.onLogoutClick.bind(this)}
+						className='nav-link'
+					>
 						<img
 							src={user.avatar}
 							alt={user.name}
@@ -66,7 +70,7 @@ class Navbar extends Component {
 					<div className='collapse navbar-collapse' id='mobile-nav'>
 						<ul className='navbar-nav mr-auto'>
 							<li className='nav-item'>
-								<Link className='nav-link' to='/profile'>
+								<Link className='nav-link' to='/profiles'>
 									{' '}
 									Developers
 								</Link>

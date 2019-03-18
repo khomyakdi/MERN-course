@@ -10,7 +10,6 @@ class Experience extends Component {
 	}
 	render() {
 		const experience = this.props.experience.map(exp => {
-			console.log(exp);
 			return (
 				<tr key={exp._id}>
 					<td> {exp.company}</td>
