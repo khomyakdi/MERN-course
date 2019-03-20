@@ -4,6 +4,7 @@ import {
 	ADD_POST,
 	GET_ERRORS,
 	POST_LOADING,
+	GET_POST,
 	GET_POSTS,
 	DELETE_POST
 } from './types';
@@ -28,7 +29,7 @@ export const addPost = postData => dispatch => {
 
 // Get Posts
 export const getPosts = () => dispatch => {
-	dispatch(setrPostLoading());
+	dispatch(setPostLoading());
 	axios
 		.get('/api/posts')
 		.then(res =>
@@ -89,7 +90,27 @@ export const removeLike = id => dispatch => {
 		);
 };
 
+// Get Post
+export const getPost = id => dispatch => {
+	console.log(id);
+	dispatch(setPostLoading());
+	axios
+		.get(`/api/posts/${id}`)
+		.then(res =>
+			dispatch({
+				type: GET_POST,
+				payload: res.data
+			})
+		)
+		.catch(err =>
+			dispatch({
+				type: GET_POSTS,
+				payload: null
+			})
+		);
+};
+
 // Set loading state
-export const setrPostLoading = () => ({
+export const setPostLoading = () => ({
 	type: POST_LOADING
 });
