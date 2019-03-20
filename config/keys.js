@@ -1,5 +1,5 @@
-module.exports = {
-	// mongoURI: 'mongodb://brad:abc123!@ds131765.mlab.com:31765/coursedb',
-	mongoURI: 'mongodb://localhost/mern',
-	secretOrKey: 'secret'
-};
+if (process.env.NODE_ENV === 'production') {
+	module.exports = require('./keys_prod');
+} else {
+	module.exports = require('./keys_dev');
+}
