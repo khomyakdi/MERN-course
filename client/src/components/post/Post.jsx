@@ -5,6 +5,7 @@ import { getPost } from '../../actions/postActions';
 import Spinner from '../common/Spinner';
 import PostItem from '../posts/PostItem';
 import { Link } from 'react-router-dom';
+import CommentForm from './CommentForm';
 
 export class Post extends Component {
 	static propTypes = {
@@ -23,6 +24,7 @@ export class Post extends Component {
 			postContent = (
 				<div>
 					<PostItem post={post} showActions={false} />
+					?<CommentForm postId={post._id} />
 				</div>
 			);
 		}
